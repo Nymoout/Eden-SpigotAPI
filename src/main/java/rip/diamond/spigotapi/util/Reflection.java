@@ -134,7 +134,7 @@ public class Reflection {
                 .filter(m -> m.getName().equals(methodName))
                 .filter(m -> m.getParameters().length == params.length)
                 .collect(Collectors.toList());
-
+//        System.out.println("Lore: " + target  + " " + methodName + " " + Arrays.toString(params));
         return methodList.get(0).invoke(target, params);
     }
 

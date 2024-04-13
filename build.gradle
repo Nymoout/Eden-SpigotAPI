@@ -23,19 +23,9 @@ repositories {
 dependencies {
     implementation 'org.mongodb:mongodb-driver-sync:4.7.1' //MongoDB driver (This has to be included in the plugin jar file, so we use implementation)
 
-    //Libraries from local
-    compileOnly name: 'ImanitySpigot-KnockbackAPI' //ImanitySpigot API
-    compileOnly name: 'ImanitySpigot-API-2022.08.1b2'
-    compileOnly name: 'CarbonSpigot-API'
-    compileOnly name: 'FoxSpigot'
-    compileOnly name: 'WindSpigot-2.1.2'
-    compileOnly name: 'RocketSpigot-SpigotAPI'
-    compileOnly name: 'LightSpigotLite'
-    compileOnly name: 'RaveSpigot'
-    compileOnly name: 'Eden-1.1.10-BETA-805a40d-all'
-
-    //Libraries from others
-    compileOnly 'org.imanity.imanityspigot:api:2022.08.1b2' //ImanitySpigot API
+    implementation files('libs/server.jar')
+    implementation files('libs/SharkPractice-1.0.0-all.jar')
+    implementation 'org.projectlombok:lombok:1.18.28'
 
     // Lombok
     compileOnly 'org.projectlombok:lombok:1.18.24'
@@ -45,7 +35,7 @@ dependencies {
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 }
 
-def targetJavaVersion = 8
+def targetJavaVersion = 11
 java {
     def javaVersion = JavaVersion.toVersion(targetJavaVersion)
     sourceCompatibility = javaVersion
